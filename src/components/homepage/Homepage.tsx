@@ -19,7 +19,7 @@ const Homepage: React.FC = () => {
                     return (
                         <div key={index} className={style.userCardContainer}>
                             <div className={style.userCardHeader}>
-                                <div className={style.headerLeft}>
+                                <div className={style.header}>
                                     <div className={style.subLeft}>
                                         <div className={style.id}>
                                             {user.id}
@@ -32,10 +32,10 @@ const Homepage: React.FC = () => {
                                         <div className={style.name}>
                                             {user.name}
                                         </div>
+                                        <div className={style.email}>
+                                            - {user.email}
+                                        </div>
                                     </div>
-                                </div>
-                                <div className={style.headerRight}>
-                                    -{user.email}
                                 </div>
                             </div>
                             <div className={style.userCardBody}></div>
