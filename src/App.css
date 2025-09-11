@@ -1,3 +1,10 @@
+@import './commonCSS/font.css';
+
+html{
+  width: 100vw;
+  height: 100vh;
+}
+
 body, #root{
   width: 100%;
   height: 100%;
@@ -12,4 +19,8 @@ body, #root{
   padding-inline-end: 0;
   padding-block-start: 0;
   padding-block-end: 0;
+}
+
+header, main, footer{
+  box-sizing: border-box;
 }
