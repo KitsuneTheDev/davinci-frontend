@@ -1,6 +1,20 @@
 .homepageOuter{
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.loadingContainer{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat-Bold';
+    font-size: 32px;
 }
 
 .homepageHeader{
@@ -24,11 +38,12 @@ h2{
 
 .userCardContainer{
     width: 100%;
-    height: 80px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border: 1px solid #333;
+    border-bottom: none;
 }
 
 .userCardHeader{
@@ -38,9 +53,15 @@ h2{
     justify-content: space-between;
     align-items: stretch;
     gap: 4px;
+    border-bottom: 1px solid #333;
+}
+
+.userCardHeader:hover{
+    cursor: pointer;
 }
 
 .header{
+    padding-top: 16px;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -48,6 +69,7 @@ h2{
 
 .subLeft{
     width: 20%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,8 +78,12 @@ h2{
 }
 
 .id{
+    width: 100%;
+    height: 100%;
     color: #F4C400;
-    padding-left: 8px;
+    display: flex;
+    align-items: start;
+    padding-left: 16px;
 }
 
 .subRight{
@@ -73,6 +99,10 @@ h2{
     font-size: 16px;
 }
 
+.deleteUserButton:hover{
+    cursor: pointer;
+}
+
 .name{
     font-family: 'Montserrat-Medium';
     font-size: 12px;
@@ -80,9 +110,18 @@ h2{
 }
 
 .email{
-    font-family: 'Montserrat-Medium';
+    font-family: 'Montserrat-MediumItalic';
     font-size: 12px;
     display: flex;
     justify-content: end;
     padding-right: 8px;
+    padding-bottom: 8px;
+}
+
+.userCardBody{
+    display: none;
+}
+
+.userCardBody.active{
+    display: block;
 }

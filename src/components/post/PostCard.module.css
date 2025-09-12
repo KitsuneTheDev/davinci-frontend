@@ -1,0 +1,171 @@
+.postcardOuter{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.postcardOuter>*{
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.loadingContainer{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat-Bold';
+    font-size: 24px;
+}
+
+.postcardHeader{
+    font-family: 'Montserrat-Bold';
+    font-size: 24px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+}
+
+.postcardBody{
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+}
+
+.postBody{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #333;
+}
+
+.bodyHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.id{
+    display: flex;
+    align-items: end;
+    font-family: 'Montserrat-Black';
+    font-size: 24px;
+}
+
+.idSub{
+    height: 100%;
+    font-family: 'Montserrat-BoldItalic';
+    font-size: 12px;
+    padding-left: 4px;
+    padding-bottom: 4px;
+}
+
+.title{
+    width: 50%;
+    height: 100%;
+    font-family: 'Montserrat-SemiBold';
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.userId{
+    height: 100%;
+    font-family: 'Montserrat-SemiBold';
+    font-size: 16px;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+
+.userIdSub{
+    height: 100%;
+    font-family: 'Montserrat-MediumItalic';
+    font-size: 12px;
+    padding-bottom: 1px;
+}
+
+.bodyContent{
+    font-family: 'Montserrat-Regular';
+    font-size: 16px;
+    position: relative;
+}
+
+.bodyDelete{
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+}
+
+.deleteButton{
+    background-color: rgb(255, 108, 108);
+    border: none;
+    height: 30px;
+    width: 100px;
+    font-family: 'Montserrat-Medium';
+    color: #fffaf0;
+}
+
+.deleteButton:hover{
+    cursor: pointer;
+}
+
+.updateButton{
+    background-color: #23380f81;
+    border: none;
+    height: 30px;
+    width: 100px;
+    font-family: 'Montserrat-Medium';
+    color: #fffaf0;
+}
+
+.updateButton:hover{
+    cursor: pointer;
+}
+
+.updateButton.disabled{
+    display: none;
+}
+
+.modifyButton{
+    background-color: #F4C400;
+    border: none;
+    height: 30px;
+    width: 100px;
+    font-family: 'Montserrat-Medium';
+    color: #fffaf0;
+}
+
+.modifyButton:hover{
+    cursor: pointer;
+}
+
+.modifyButton.disabled{
+    display: none;
+}
+
+.updateContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.updateContainer>textarea{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-bottom: 1px solid #333;
+    background-color: #fffaf0;
+    font-family: 'Montserrat-Regular';
+}
+
+.updateContainer>textarea.disabled{
+    display: none;
+}
+
+textarea::-webkit-scrollbar{
+    display: none;
+}
