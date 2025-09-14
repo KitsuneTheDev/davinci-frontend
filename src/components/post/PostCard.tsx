@@ -17,6 +17,7 @@ const PostCard: React.FC<PostCardProps> = ({posts, loading}) =>{
     const { refreshPosts } = usePost();
 
     const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+    const fullTitleRefs = useRef<Record<number, HTMLDivElement | null>>({});
 
     const [textActive, setTextActive] = useState<number | null>(null);
 
@@ -39,6 +40,16 @@ const PostCard: React.FC<PostCardProps> = ({posts, loading}) =>{
         refreshPosts();
     }
 
+    const handleTitleEnter = (id: number) => {
+        fullTitleRefs.current[id].style.display = 'flex';
+        
+    }
+
+    const handleTitleLeave = (id: number) => {
+        fullTitleRefs.current[id].style.display = 'none';
+        
+    }
+
     return loading ? (
         <div className={style.postcardOuter}>
             <div className={style.loadingContainer}>
@@ -56,7 +67,15 @@ const PostCard: React.FC<PostCardProps> = ({posts, loading}) =>{
                         <div key={index} className={style.postBody}>
                             <div className={style.bodyHeader}>
                                 <div className={style.id}>{post.id}<span className={style.idSub}>-post id</span></div>
-                                <div className={style.title}>{post.title.length > 30 ? `${post.title.slice(0, 27)}...` : post.title}</div>
+                                <div 
+                                    className={style.title}
+                                    onMouseEnter={() => handleTitleEnter(post.id)}
+                                    onMouseLeave={() => handleTitleLeave(post.id)}>{post.title.length > 30 ? `${post.title.slice(0, 27)}...` : post.title}
+                                    <div 
+                                        className={style.fullTitle}
+                                        ref={(targetRef: HTMLDivElement | null) => {
+                                            (fullTitleRefs.current[post.id] = targetRef)}}>{post.title}</div>
+                                </div>
                                 <div className={style.userId}>{post.userId}<span className={style.userIdSub}>-user id</span></div>
                             </div>
                             <div className={style.bodyContent}>
