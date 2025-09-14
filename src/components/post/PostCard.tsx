@@ -41,13 +41,15 @@ const PostCard: React.FC<PostCardProps> = ({posts, loading}) =>{
     }
 
     const handleTitleEnter = (id: number) => {
-        fullTitleRefs.current[id].style.display = 'flex';
-        
+        if(fullTitleRefs.current[id]) {
+            fullTitleRefs.current[id].style.display = 'flex';
+        } 
     }
 
     const handleTitleLeave = (id: number) => {
-        fullTitleRefs.current[id].style.display = 'none';
-        
+        if(fullTitleRefs.current[id]) {
+            fullTitleRefs.current[id].style.display = 'none';
+        } 
     }
 
     return loading ? (
