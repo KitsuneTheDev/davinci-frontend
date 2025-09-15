@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import { type Post } from '../../types/types.ts';
 import { deletePost } from '../../api/deletePost.ts';
 import { updatePost } from '../../api/updatePost.ts';
-import { useUser } from '../context/userContext.tsx';
+import { useUser } from '../context/UserContext.tsx';
 import { usePost } from '../context/PostContext.tsx';
 import { useModalAdd } from '../context/ModalAddPostContext.tsx';
 
