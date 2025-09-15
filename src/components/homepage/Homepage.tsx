@@ -1,7 +1,7 @@
 import style from './Homepage.module.css';
 import React, { useState } from 'react';
 import PostCard from '../post/PostCard.tsx';
-import { useUser } from '../context/UserContext.tsx';
+import { useUser } from '../context/userContext.tsx';
 import { usePost } from '../context/PostContext.tsx';
 import { useModalAdd } from '../context/ModalAddPostContext.tsx';
 

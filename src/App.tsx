@@ -1,6 +1,6 @@
 import './App.css';
 import Layout from './components/layout/Layout';
-import { UserProvider } from './components/context/UserContext';
+import { UserProvider } from './components/context/userContext';
 import { PostProvider } from './components/context/PostContext';
 import { ModalAddPostProvider } from './components/context/ModalAddPostContext';
 import Homepage from './components/homepage/Homepage';
