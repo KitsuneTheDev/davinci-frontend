@@ -44,7 +44,7 @@ const ModalAddPost:React.FC = () => {
         return () => window.removeEventListener('click', handleWindowClick);
     }, [modalActive])
     
-    if(!modalActive) return;
+    if(!modalActive) return null;
 
     if(addLoading) return(
         <div className={style.modalOuter} ref={modalRef}>
