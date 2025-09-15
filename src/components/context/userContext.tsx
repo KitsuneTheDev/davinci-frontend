@@ -3,7 +3,7 @@ import { fetchUsers } from '../../api/fetchUser.ts';
 import { type User } from '../../types/types.ts';
 
 type UserContextType = {
-    users: User[] | null,
+    users: User[] | [],
     userLoading: boolean,
     refreshUsers: VoidFunction,
 };
