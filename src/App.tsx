@@ -14,7 +14,7 @@ function App() {
         <ModalAddPostProvider>
           <Layout>
             <Homepage />
-            <ModalAddPost addLoading={true} />
+            <ModalAddPost />
           </Layout>
         </ModalAddPostProvider>
       </PostProvider>

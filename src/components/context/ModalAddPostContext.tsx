@@ -45,6 +45,12 @@ export const ModalAddPostProvider = ({children}: {children: React.ReactNode}) =>
                 body: "",
             });
         } finally {
+            setPost({
+                id: -1,
+                userId: -1,
+                title: "",
+                body: "",
+            });
             setAddLoading(false);
             refreshPosts();
         }
