@@ -3,8 +3,9 @@ import React, { useRef, useState } from 'react';
 import { type Post } from '../../types/types.ts';
 import { deletePost } from '../../api/deletePost.ts';
 import { updatePost } from '../../api/updatePost.ts';
-import { useUser } from '../context/userContext.tsx';
-import { usePost } from '../context/postContext.tsx';
+import { useUser } from '../context/UserContext.tsx';
+import { usePost } from '../context/PostContext.tsx';
+import { useModalAdd } from '../context/ModalAddPostContext.tsx';
 
 interface PostCardProps {
     posts?: Post[],
@@ -15,6 +16,7 @@ const PostCard: React.FC<PostCardProps> = ({posts, loading}) =>{
 
     const { refreshUsers } = useUser();
     const { refreshPosts } = usePost();
+    const { toggleModal } = useModalAdd();
 
     const textareaRef = useRef<HTMLTextAreaElement | null>(null);
     const fullTitleRefs = useRef<Record<number, HTMLDivElement | null>>({});
@@ -52,6 +54,12 @@ const PostCard: React.FC<PostCardProps> = ({posts, loading}) =>{
         } 
     }
 
+    const handleAddClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
+        event.preventDefault();
+        event.stopPropagation();
+        toggleModal();
+    }
+
     return loading ? (
         <div className={style.postcardOuter}>
             <div className={style.loadingContainer}>
@@ -61,7 +69,10 @@ const PostCard: React.FC<PostCardProps> = ({posts, loading}) =>{
     ) : (
         <div className={style.postcardOuter}>
             <div className={style.postcardHeader}>
-                User posts
+                <div className={style.postCardTitle}>User posts</div>
+                <button 
+                    className={style.addPostButton}
+                    onClick={handleAddClick}>Add post</button>
             </div>
             <div className={style.postcardBody}>
                 {posts?.map((post, index) => {

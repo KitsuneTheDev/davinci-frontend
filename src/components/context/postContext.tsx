@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { fetchPost } from '../../api/fetchPost';
+import { fetchPost } from '../../api/fetchPost.ts';
 import { type Post } from '../../types/types.ts';
 
 type PostContextType = {
@@ -12,7 +12,7 @@ const PostContext = createContext<PostContextType | undefined>(undefined);
 
 export const PostProvider = ({ children } : { children: React.ReactNode }) => {
     const [posts, setPosts] = useState<Post[]>([]);
-    const [postLoading, setPostLoading] = useState(false);
+    const [postLoading, setPostLoading] = useState<boolean>(false);
 
     useEffect(() => {
         refreshPosts();

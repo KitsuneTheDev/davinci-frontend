@@ -1,3 +1,17 @@
+/* GENERIC START */
+
+button:hover{
+    cursor: pointer;
+    transform: scale(108%);
+    border: 1px solid #333;
+}
+
+button:active{
+    transform: scale(92%);
+}
+
+/* GENERIC ENDS */
+
 .postcardOuter{
     width: 100%;
     display: flex;
@@ -24,6 +38,18 @@
     font-size: 24px;
     padding-bottom: 16px;
     padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addPostButton{
+    font-family: 'Montserrat-Semibold';
+    width: 100px;
+    height: 30px;
+    background-color: #c0f55e;
+    border: none;
+    color: #333;
 }
 
 .postcardBody{
@@ -126,10 +152,6 @@
     color: #fffaf0;
 }
 
-.deleteButton:hover{
-    cursor: pointer;
-}
-
 .updateButton{
     background-color: #23380f81;
     border: none;
@@ -137,10 +159,6 @@
     width: 100px;
     font-family: 'Montserrat-Medium';
     color: #fffaf0;
-}
-
-.updateButton:hover{
-    cursor: pointer;
 }
 
 .updateButton.disabled{
@@ -154,10 +172,6 @@
     width: 100px;
     font-family: 'Montserrat-Medium';
     color: #fffaf0;
-}
-
-.modifyButton:hover{
-    cursor: pointer;
 }
 
 .modifyButton.disabled{

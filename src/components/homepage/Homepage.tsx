@@ -1,16 +1,19 @@
 import style from './Homepage.module.css';
 import React, { useState } from 'react';
 import PostCard from '../post/PostCard.tsx';
-import { useUser } from '../context/userContext.tsx';
-import { usePost } from '../context/postContext.tsx';
+import { useUser } from '../context/UserContext.tsx';
+import { usePost } from '../context/PostContext.tsx';
+import { useModalAdd } from '../context/ModalAddPostContext.tsx';
 
 const Homepage: React.FC = () => {
 
+    const { setPost } = useModalAdd();
     const { users, userLoading } = useUser();
     const { posts, postLoading} = usePost();
     const [activeUserId, setActiveUserId] = useState<number[]>([]);
 
     const handleCardClick = (userId: number) => {
+        setPost({userId: userId, id: posts.filter(p => p.userId === userId).length + 1, title: "", body: ""});
         setActiveUserId(prev => {
             return prev.includes(userId) ? prev.filter(id => id !== userId) : [...prev, userId]
         });

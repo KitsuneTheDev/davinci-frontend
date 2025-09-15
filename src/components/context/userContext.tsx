@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { fetchUsers } from '../../api/fetchUser';
+import { fetchUsers } from '../../api/fetchUser.ts';
 import { type User } from '../../types/types.ts';
 
 type UserContextType = {
@@ -12,7 +12,7 @@ const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export const UserProvider = ({ children } : { children: React.ReactNode }) => {
     const [users, setUsers] = useState<User[]>([]);
-    const [userLoading, setUserLoading] = useState(false);
+    const [userLoading, setUserLoading] = useState<boolean>(false);
 
     useEffect(() => {
         refreshUsers();
