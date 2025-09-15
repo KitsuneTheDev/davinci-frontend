@@ -21,11 +21,11 @@ const ModalAddPost:React.FC = () => {
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
         if(event.target?.name === "title") {
             setPost(prev => {
-                return (prev ? {...prev, title: event.target?.value} : prev)
+                return {...prev, title: event.target?.value}
             });
         } else {
             setPost(prev => {
-                return (prev ? {...prev, body: event.target?.value} : prev)
+                return {...prev, body: event.target?.value}
             });
         }
         console.log(post);
