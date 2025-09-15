@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import style from './ModalAddPost.module.css';
-import type { Post } from '../../types/types';
 import { useModalAdd } from '../context/ModalAddPostContext';
 
 const ModalAddPost:React.FC = () => {
