@@ -38,6 +38,6 @@ npm run dev
 * This project does not use any extra dependencies beyond React, TypeScript, and Vite defaults.
 
 ## Demos
-[demo1]()
+[!demo1](/public/davinci_1.png)
 [demo2]()
 [demo3]()
